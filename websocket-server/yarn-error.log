@@ -1,0 +1,53 @@
+Arguments: 
+  /Users/paulyakhontov/.nvm/versions/node/v18.13.0/bin/node /opt/homebrew/bin/yarn add socket.io-debug
+
+PATH: 
+  /Users/paulyakhontov/.nvm/versions/node/v18.13.0/bin:/Users/paulyakhontov/.pyenv/shims:/Users/paulyakhontov/.pyenv/shims:/Users/paulyakhontov/.pyenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/paulyakhontov/.nvm/versions/node/v18.13.0/bin:/Users/paulyakhontov/.pyenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/paulyakhontov/Library/Android/sdk/emulator:/Users/paulyakhontov/Library/Android/sdk/platform-tools:/Users/paulyakhontov/Library/Android/sdk/emulator:/Users/paulyakhontov/Library/Android/sdk/platform-tools:/Users/paulyakhontov/Library/Android/sdk/emulator:/Users/paulyakhontov/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.13.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.npmjs.org/socket.io-debug: Not found
+      at params.callback [as _callback] (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "websoket-server",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "start": "node ./bin/www"
+    },
+    "dependencies": {
+      "cookie-parser": "~1.4.4",
+      "cors": "^2.8.5",
+      "debug": "~2.6.9",
+      "express": "~4.16.1",
+      "http-errors": "~1.6.3",
+      "jade": "~1.11.0",
+      "morgan": "~1.9.1",
+      "socket.io": "^4.7.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
