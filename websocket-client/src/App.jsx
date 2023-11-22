@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import io from "socket.io-client";
 import { useSpring, animated } from "@react-spring/web";
 
 const ENDPOINT = "localhost:3001";
@@ -6,15 +7,30 @@ const ENDPOINT = "localhost:3001";
 let socket;
 
 function App() {
-  const styleProp = useSpring({
-    scale: 2,
-    from: { scale: 1 },
-    delay: 1000,
-  });
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    const handleSocketMessage = (message) => {
+      setData(message);
+    };
+
+    socket = io(ENDPOINT);
+
+    // Прослуховування подій від сервера
+    socket.on("message", handleSocketMessage);
+
+    // Зупинка прослуховування при розмонтуванні компоненту
+    return () => {
+      socket.off("message", handleSocketMessage);
+      socket.disconnect();
+    };
+  }, []); // Порожній масив вказує, що ефект повинен викликатися тільки після монтажу та перед розмонтажем
+
   return (
-    <animated.div style={styleProp}>
+    <div>
       <h1>Socket.io App</h1>
-    </animated.div>
+      <p>{data}</p>
+    </div>
   );
 }
 
